@@ -52,6 +52,6 @@ using Base.Test
 
     for i = 1:7
         mb = miniball(pts[:,:,i])
-        @test_broken isapprox(mb.center,[0.0;0.0];atol=10*eps())
+        @test isapprox(mb.center,[0.0;0.0];atol=10*eps())
     end
 end

@@ -11,8 +11,8 @@ using Miniball
     ball = miniball(Float64.(pts))
     ball_radius = sqrt(ball.squared_radius)
     pt = pts[1,:]
-    @test_broken norm(pt - ball.center) <= ball_radius * 1.4
-    @test_broken norm(pt - ball.center) <= ball_radius
+    @test norm(pt - ball.center) <= ball_radius * 1.4
+    @test norm(pt - ball.center) <= ball_radius
 end
 
 @testset "broken 6 points 3d" begin
@@ -22,6 +22,6 @@ end
     ball = miniball(Float64.(pts))
     ball_radius = sqrt(ball.squared_radius)
     pt = pts[5,:]
-    @test_broken norm(pt - ball.center) <= ball_radius * 1.7
-    @test_broken norm(pt - ball.center) <= ball_radius
+    @test norm(pt - ball.center) <= ball_radius * 1.7
+    @test norm(pt - ball.center) <= ball_radius + 1000eps(Float64)
 end

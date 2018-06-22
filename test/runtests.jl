@@ -5,6 +5,9 @@ using Miniball
 using Base.Test
 using TimerOutputs
 
+include("test_unit_circle.jl")
+exit(0)
+
 pkg_dir = Pkg.dir("Miniball")
 maybe_test_files = readdir(joinpath(pkg_dir, "test"))
 is_test_file(fn) = startswith(fn, "test_") & endswith(fn, ".jl")

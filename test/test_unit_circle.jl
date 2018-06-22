@@ -71,8 +71,8 @@ end
             end
         end
 
-        mb = miniball(pts, check=false)
-        origo = isapprox(mb.center,[0.0;0.0];atol=10*eps())
+        center,r = miniball(pts, Welzl())
+        origo = isapprox(center,[0.0;0.0];atol=sqrt(eps()))
         if origo
             @test origo
         else
